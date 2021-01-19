@@ -7,27 +7,31 @@ import Button from 'uikit/Button'
 export default function Auth() {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <Logo>ЛОГО</Logo>
-      <InputsContainer>
-        <TextInput
-          width={'full'}
-          placeholder={'Ваш номер телефона'}
-          keyboardType={'phone-pad'}
-        />
-        <InputWrapper>
+      <Wrapper>
+        <Logo>ЛОГО</Logo>
+        <InputsContainer>
           <TextInput
-            width={'half'}
-            placeholder={'Введите код из смс'}
+            width={'full'}
+            placeholder={'Ваш номер телефона'}
             keyboardType={'phone-pad'}
           />
-        </InputWrapper>
-      </InputsContainer>
-      <ButtonContainer>
-        <Button title={'Отправить'} onPress={() => console.log('Success!')} />
-      </ButtonContainer>
+          <InputWrapper>
+            <TextInput
+              width={'half'}
+              placeholder={'Введите код из смс'}
+              keyboardType={'phone-pad'}
+            />
+          </InputWrapper>
+        </InputsContainer>
+        <ButtonContainer>
+          <Button title={'Отправить'} onPress={() => console.log('Success!')} />
+        </ButtonContainer>
+      </Wrapper>
     </TouchableWithoutFeedback>
   )
 }
+
+const Wrapper = styled.View``
 
 const Logo = styled.Text`
   margin-top: 32%;
