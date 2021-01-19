@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components/native';
+import React from 'react'
+import styled from 'styled-components/native'
 
 type TextInputProps = {
-  width: any;
-  placeholder: string;
-  keyboardType: string;
-};
+  width: any
+  placeholder: string
+  keyboardType: string
+}
 
 export default function TextInputFD({
   width,
@@ -16,18 +16,19 @@ export default function TextInputFD({
     <Input
       width={width}
       placeholder={placeholder}
-      keyboardType={keyboardType}></Input>
-  );
+      keyboardType={keyboardType}
+    ></Input>
+  )
 }
 
 const Input = styled.TextInput`
   padding-top: 13px;
   padding-bottom: 13px;
-  width: ${({width}) => (width == 'full' ? '95%' : '50%')};
+  width: ${({ width }) => (width == 'full' ? '95%' : '50%')};
   height: 48px;
   border-bottom-width: 1px;
   border-bottom-color: rgba(100, 3, 23, 0.2);
 
-  font-size: ${({theme}) => theme.typeScale.textInput};
-  line-height: ${({theme}) => theme.lineHeight.textInput};
-`;
+  font-size: ${({ theme }) => theme.typeScale.textInput};
+  line-height: ${({ theme }) => theme.lineHeight.textInput};
+`

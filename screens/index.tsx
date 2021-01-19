@@ -1,3 +1,3 @@
-import AuthScreen from 'screens/Routes/Auth';
+import AuthScreen from 'screens/Routes/Auth'
 
-export {AuthScreen};
+export { AuthScreen }
