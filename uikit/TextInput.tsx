@@ -1,25 +1,23 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
-type TextInputProps = {
+interface TextInputProps {
   width: any
   placeholder: string
   keyboardType: string
 }
 
-export default function TextInputFD({
-  width,
-  placeholder,
-  keyboardType,
-}: TextInputProps) {
+const TextInput = ({ width, placeholder, keyboardType }: TextInputProps) => {
   return (
     <Input
       width={width}
       placeholder={placeholder}
       keyboardType={keyboardType}
-    ></Input>
+    />
   )
 }
+
+export default TextInput
 
 const Input = styled.TextInput`
   padding-top: 13px;
@@ -29,6 +27,6 @@ const Input = styled.TextInput`
   border-bottom-width: 1px;
   border-bottom-color: rgba(100, 3, 23, 0.2);
 
-  font-size: ${({ theme }) => theme.typeScale.textInput};
-  line-height: ${({ theme }) => theme.lineHeight.textInput};
+  font-size: ${({ theme }) => theme.typeScale.header3};
+  line-height: ${({ theme }) => theme.lineHeight.header3};
 `

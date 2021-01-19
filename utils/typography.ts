@@ -1,11 +1,11 @@
 export const typeScale = {
-  authLogo: '36px',
-  textInput: '13px',
-  buttonText: '17px',
+  header1: '36px',
+  header2: '17px',
+  header3: '13px',
 }
 
 export const lineHeight = {
-  authLogo: '36px',
-  textInput: '22px',
-  buttonText: '45px',
+  header0: '45px',
+  header1: '36px',
+  header3: '22px',
 }
