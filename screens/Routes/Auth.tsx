@@ -1,33 +1,35 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { View, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import TextInput from 'uikit/TextInput'
 import Button from 'uikit/Button'
 
 export default function Auth() {
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <Wrapper>
-        <Logo>ЛОГО</Logo>
+    <Wrapper>
+      <Logo>ЛОГО</Logo>
+      <KeyboardAwareScrollView>
         <InputsContainer>
           <TextInput
-            width={'full'}
-            placeholder={'Ваш номер телефона'}
-            keyboardType={'phone-pad'}
+            width="full"
+            placeholder="Ваш номер телефона"
+            keyboardType="phone-pad"
+            returnKeyType="done"
           />
           <InputWrapper>
             <TextInput
-              width={'half'}
-              placeholder={'Введите код из смс'}
-              keyboardType={'phone-pad'}
+              width="half"
+              placeholder="Введите код из смс"
+              keyboardType="phone-pad"
+              returnKeyType="done"
             />
           </InputWrapper>
         </InputsContainer>
-        <ButtonContainer>
-          <Button title={'Отправить'} onPress={() => console.log('Success!')} />
-        </ButtonContainer>
-      </Wrapper>
-    </TouchableWithoutFeedback>
+      </KeyboardAwareScrollView>
+      <ButtonContainer>
+        <Button title={'Отправить'} onPress={() => console.log('Success!')} />
+      </ButtonContainer>
+    </Wrapper>
   )
 }
 
@@ -37,8 +39,8 @@ const Logo = styled.Text`
   margin-top: 32%;
   text-align: center;
   color: ${({ theme }) => theme.colors.ui.blue};
-  font-size: ${({ theme }) => theme.typeScale.header1};
-  line-height: ${({ theme }) => theme.lineHeight.header1};
+  font-size: ${({ theme }) => theme.typeScale.header2};
+  line-height: ${({ theme }) => theme.lineHeight.header2};
 `
 
 const InputsContainer = styled.View`

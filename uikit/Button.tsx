@@ -27,7 +27,7 @@ const ButtonContainer = styled.TouchableOpacity`
 const ButtonText = styled.Text`
   margin: 0 auto;
   text-align: center;
-  line-height: ${({ theme }) => theme.lineHeight.header0};
-  font-size: ${({ theme }) => theme.typeScale.header2};
+  line-height: ${({ theme }) => theme.lineHeight.header1};
+  font-size: ${({ theme }) => theme.typeScale.header3};
   color: ${({ theme }) => theme.colors.system.white};
 `
