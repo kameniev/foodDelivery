@@ -3,8 +3,11 @@ import styled from 'styled-components/native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import TextInput from 'uikit/TextInput'
 import Button from 'uikit/Button'
+import { useNavigation } from '@react-navigation/native'
+
 
 export default function Auth() {
+  const navigation = useNavigation()
   return (
     <Wrapper>
       <Logo>ЛОГО</Logo>
@@ -27,7 +30,10 @@ export default function Auth() {
         </InputsContainer>
       </KeyboardAwareScrollView>
       <ButtonContainer>
-        <Button title={'Отправить'} onPress={() => console.log('Success!')} />
+        <Button
+          title={'Отправить'}
+          onPress={() => navigation.navigate('Tab')}
+        />
       </ButtonContainer>
     </Wrapper>
   )

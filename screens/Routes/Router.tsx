@@ -1,4 +1,5 @@
 import { AuthScreen } from 'screens/index'
+import TabRouter from 'screens/Routes/TabRouter'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { theme } from 'utils/themes'
@@ -21,6 +22,11 @@ export default class Router extends React.Component {
           options={{ title: 'Авторизация' }}
           name="Auth"
           component={AuthScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Tab"
+          component={TabRouter}
         />
       </Stack.Navigator>
     )
