@@ -8,10 +8,11 @@ import {
 } from 'screens/index'
 import Icon from 'uikit/Icon'
 import styled from 'styled-components/native'
+import SettingsRouter from 'screens/Routes/SettingsRouter'
 
 const Tab = createBottomTabNavigator()
 
-export default function App() {
+export default function TabRouter() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -41,7 +42,7 @@ export default function App() {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Search" component={SearchScreen} />
       <Tab.Screen name="Market" component={MarketScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Profile" component={SettingsRouter} />
     </Tab.Navigator>
   )
 }

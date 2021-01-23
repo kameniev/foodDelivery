@@ -5,13 +5,12 @@ import TextInput from 'uikit/TextInput'
 import Button from 'uikit/Button'
 import { useNavigation } from '@react-navigation/native'
 
-
 export default function Auth() {
   const navigation = useNavigation()
   return (
     <Wrapper>
-      <Logo>ЛОГО</Logo>
       <KeyboardAwareScrollView>
+        <Logo>ЛОГО</Logo>
         <InputsContainer>
           <TextInput
             width="full"
@@ -28,13 +27,13 @@ export default function Auth() {
             />
           </InputWrapper>
         </InputsContainer>
+        <ButtonContainer>
+          <Button
+            title={'Отправить'}
+            onPress={() => navigation.navigate('Tab')}
+          />
+        </ButtonContainer>
       </KeyboardAwareScrollView>
-      <ButtonContainer>
-        <Button
-          title={'Отправить'}
-          onPress={() => navigation.navigate('Tab')}
-        />
-      </ButtonContainer>
     </Wrapper>
   )
 }

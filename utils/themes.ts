@@ -2,7 +2,7 @@ import 'styled-components'
 import { DefaultTheme } from 'styled-components'
 import * as colors from './colors'
 import { typeScale, lineHeight } from './typography'
-import { borderRadius } from './visual'
+import { borderRadius, shadow } from './visual'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -10,6 +10,7 @@ declare module 'styled-components' {
     typeScale: typeof typeScale
     lineHeight: typeof lineHeight
     borderRadius: typeof borderRadius
+    shadow: typeof shadow
   }
 }
 
@@ -18,4 +19,5 @@ export const theme: DefaultTheme = {
   typeScale,
   lineHeight,
   borderRadius,
+  shadow,
 }

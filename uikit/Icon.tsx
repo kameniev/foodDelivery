@@ -16,6 +16,13 @@ import Stars4 from 'assets/icons/stars4.svg'
 import Stars5 from 'assets/icons/stars5.svg'
 import Clock from 'assets/icons/Clock.svg'
 import Separator from 'assets/icons/separator.svg'
+import SettingFav from 'assets/icons/settingFav.svg'
+import SettingInfo from 'assets/icons/settingInfo.svg'
+import SettingList from 'assets/icons/settingList.svg'
+import SettingProfile from 'assets/icons/settingProfile.svg'
+import SettingSettings from 'assets/icons/settingSettings.svg'
+import Pointer from 'assets/icons/pointer.svg'
+import List from 'assets/icons/list.svg'
 
 const Icons = {
   Home: Home,
@@ -35,6 +42,13 @@ const Icons = {
   Stars5: Stars5,
   Clock: Clock,
   Separator: Separator,
+  SettingFav: SettingFav,
+  SettingInfo: SettingInfo,
+  SettingList: SettingList,
+  SettingProfile: SettingProfile,
+  SettingSettings: SettingSettings,
+  Pointer: Pointer,
+  List: List,
 }
 
 export type IconName = keyof typeof Icons
