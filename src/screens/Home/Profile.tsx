@@ -1,42 +1,49 @@
 import React from 'react'
-import { useNavigation } from '@react-navigation/native'
 import styled from 'styled-components/native'
-import SettingCard from 'components/settings/SettingCard'
+import { useNavigation } from '@react-navigation/native'
+import SettingCard from 'components/Settings/SettingCard'
+import {
+  SettingProfile,
+  SettingSettings,
+  SettingList,
+  SettingFav,
+  SettingInfo,
+} from 'uikit/Icons'
 
-function Profile() {
+const HomeProfileScreen = () => {
   const navigation = useNavigation()
 
   return (
     <Container>
       <SettingCard
-        iconName="SettingProfile"
         title="Личные данные"
+        Icon={SettingProfile}
         onPress={() => navigation.navigate('SettingProfile')}
       />
       <SettingCard
-        iconName="SettingSettings"
         title="Настройки"
+        Icon={SettingSettings}
         onPress={() => navigation.navigate('SettingSettings')}
       />
       <SettingCard
-        iconName="SettingList"
         title="Список заказов"
+        Icon={SettingList}
         onPress={() => console.log('Success')}
       />
       <SettingCard
-        iconName="SettingFav"
         title="Избранное"
+        Icon={SettingFav}
         onPress={() => console.log('Success')}
       />
       <SettingCard
-        iconName="SettingInfo"
         title="Справка"
+        Icon={SettingInfo}
         onPress={() => navigation.navigate('SettingInfo')}
       />
     </Container>
   )
 }
 
-export default Profile
+export default HomeProfileScreen
 
 const Container = styled.SafeAreaView``

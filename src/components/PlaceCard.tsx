@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import Icon from 'uikit/Icon'
+import { Clock } from 'uikit/Icons'
 
 interface PlaceCardProps {
   isLiked: boolean
-  image: Function
+  image: string
   rating: number
   numOfReviews: number
   deliveryTime: string
@@ -53,7 +53,7 @@ export default function PlaceCard({
         </RatingContainer>
         <DeliveryTime>
           <TimeIconWrapper>
-            <Icon name={'Clock'} />
+            <Clock />
           </TimeIconWrapper>
           <TimeText>{deliveryTime}</TimeText>
         </DeliveryTime>

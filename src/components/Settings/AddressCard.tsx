@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { TouchableOpacity } from 'react-native'
-import Icon, { IconName } from 'uikit/Icon'
+import Icon from 'uikit/Icons'
 
 interface SettingCardProps {
   title: string
-  iconName: IconName
-  onPress(): void
+  focused: boolean
 }
 
-const SettingCard = ({ title, iconName, onPress }: SettingCardProps) => {
+const AddressCard = ({ title, focused }: SettingCardProps) => {
+  let test = false
   return (
-    <TouchableOpacity onPress={onPress}>
-      <CardContainer>
+    <TouchableOpacity onPress={() => console.log('test')}>
+      <CardContainer focused={focused}>
         <IconWrapper>
-          <Icon name={iconName} width={25} />
+          <Icon name={'Pointer'} width={25} />
         </IconWrapper>
         <CardText>{title}</CardText>
       </CardContainer>
@@ -22,7 +22,7 @@ const SettingCard = ({ title, iconName, onPress }: SettingCardProps) => {
   )
 }
 
-export default SettingCard
+export default AddressCard
 
 const CardContainer = styled.View`
   margin: 0 auto;
@@ -30,6 +30,8 @@ const CardContainer = styled.View`
   flex-direction: row;
   align-items: center;
   border-radius: ${({ theme }) => theme.borderRadius.little};
+  border-color: ${({ theme }) => theme.colors.ui.blue};
+  border-width: ${({ focused }) => (focused ? '1px' : '0px')};
   box-shadow: ${({ theme }) => theme.shadow.basic};
   background: #ffffff;
   width: 90%;

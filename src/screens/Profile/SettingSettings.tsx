@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import SettingCard from 'components/settings/SettingCard'
+import SettingCard from 'components/Settings/SettingCard'
 import { useNavigation } from '@react-navigation/native'
 
 function SettingSettings() {

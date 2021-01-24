@@ -1,5 +1,5 @@
 import React from 'react'
-import AddressCard from 'components/settings/AddressCard'
+import AddressCard from 'components/Settings/AddressCard'
 import styled from 'styled-components/native'
 import Button from 'uikit/Button'
 import { useNavigation } from '@react-navigation/native'
