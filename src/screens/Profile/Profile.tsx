@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { useNavigation } from '@react-navigation/native'
-import SettingCard from 'components/Settings/SettingCard'
+import SettingCard from 'components/Profile/SettingCard'
 import {
   SettingProfile,
   SettingSettings,
@@ -9,9 +9,10 @@ import {
   SettingFav,
   SettingInfo,
 } from 'uikit/Icons'
+import { ProfileScreenNavigationProp } from 'screens/types'
 
-const HomeProfileScreen = () => {
-  const navigation = useNavigation()
+const ProfileScreen = () => {
+  const navigation = useNavigation<ProfileScreenNavigationProp>()
 
   return (
     <Container>
@@ -44,6 +45,6 @@ const HomeProfileScreen = () => {
   )
 }
 
-export default HomeProfileScreen
+export default ProfileScreen
 
 const Container = styled.SafeAreaView``

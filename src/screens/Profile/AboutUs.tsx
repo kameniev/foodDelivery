@@ -1,9 +1,8 @@
 import React from 'react'
-import { Text, View } from 'react-native'
 import styled from 'styled-components/native'
 import Description from 'uikit/Description'
 
-function AboutUs() {
+const ProfileAboutUsScreen = () => {
   return (
     <Container>
       <Description>
@@ -21,6 +20,6 @@ function AboutUs() {
   )
 }
 
-export default AboutUs
+export default ProfileAboutUsScreen
 
 const Container = styled.SafeAreaView``

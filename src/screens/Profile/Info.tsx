@@ -1,36 +1,38 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import SettingCard from 'components/Settings/SettingCard'
+import SettingCard from 'components/Profile/SettingCard'
 import { useNavigation } from '@react-navigation/native'
+import { List } from 'uikit/Icons'
+import { ProfileScreenNavigationProp } from 'screens/types'
 
-function SettingInfo() {
-  const navigation = useNavigation()
+const ProfileInfoScreen = () => {
+  const navigation = useNavigation<ProfileScreenNavigationProp>()
   return (
     <Container>
       <SettingCard
         title={'Работа у нас'}
-        iconName={'List'}
+        Icon={List}
         onPress={() => console.log('Success!')}
       />
       <SettingCard
         title={'Новости'}
-        iconName={'List'}
+        Icon={List}
         onPress={() => console.log('Success!')}
       />
       <SettingCard
         title={'О приложении'}
-        iconName={'List'}
+        Icon={List}
         onPress={() => console.log('Success!')}
       />
       <SettingCard
         title={'О нас'}
-        iconName={'List'}
+        Icon={List}
         onPress={() => navigation.navigate('AboutUs')}
       />
     </Container>
   )
 }
 
-export default SettingInfo
+export default ProfileInfoScreen
 
 const Container = styled.SafeAreaView``

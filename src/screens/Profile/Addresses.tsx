@@ -1,11 +1,12 @@
 import React from 'react'
-import AddressCard from 'components/Settings/AddressCard'
 import styled from 'styled-components/native'
-import Button from 'uikit/Button'
 import { useNavigation } from '@react-navigation/native'
+import AddressCard from 'components/Profile/AddressCard'
+import { ProfileScreenNavigationProp } from 'screens/types'
+import Button from 'uikit/Button'
 
-function SettingAddresses() {
-  const navigation = useNavigation()
+const ProfileAddressesScreen = () => {
+  const navigation = useNavigation<ProfileScreenNavigationProp>()
   return (
     <Container>
       <AddressCardsContainer>
@@ -28,7 +29,7 @@ function SettingAddresses() {
   )
 }
 
-export default SettingAddresses
+export default ProfileAddressesScreen
 
 const Container = styled.SafeAreaView``
 

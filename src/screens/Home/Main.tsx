@@ -1,8 +1,8 @@
 import React from 'react'
 import { Image, ScrollView, FlatList, TouchableOpacity } from 'react-native'
 import styled from 'styled-components/native'
-import ImagesCarousel from 'components/ImagesCarousel'
-import PlaceCard from 'components/PlaceCard'
+import ImagesCarousel from 'components/Home/ImagesCarousel'
+import PlaceCard from 'components/Home/PlaceCard'
 import categoryData from 'data/categoryData'
 
 const HomeMainScreen = () => {
@@ -43,7 +43,7 @@ const HomeMainScreen = () => {
           <SingleCardWrapper>
             <PlaceCard
               name="мамалыга"
-              image={require('assets/images/cardImage1.jpg')}
+              image={require('assets/images/card_image1.jpg')}
               isLiked={false}
               rating={4.1}
               numOfReviews={35}

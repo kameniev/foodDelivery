@@ -13,7 +13,10 @@ import {
   Profile,
   ProfileOutline,
 } from 'uikit/Icons'
-import HomeScreen from 'screens/Home'
+import HomeRouter from 'screens/Home/index'
+import MarketRouter from 'screens/Market/index'
+import SearchRouter from 'screens/Search/index'
+import ProfileRouter from 'screens/Profile/index'
 
 const Tab = createBottomTabNavigator<RootTabsParamList>()
 
@@ -44,10 +47,10 @@ const RootRouter = () => {
         showLabel: false,
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      {/* <Tab.Screen name="Search" component={SearchScreen} />
-      <Tab.Screen name="Market" component={MarketScreen} />
-      <Tab.Screen name="Profile" component={SettingsRouter} /> */}
+      <Tab.Screen name="Home" component={HomeRouter} />
+      <Tab.Screen name="Search" component={SearchRouter} />
+      <Tab.Screen name="Market" component={MarketRouter} />
+      <Tab.Screen name="Profile" component={ProfileRouter} />
     </Tab.Navigator>
   )
 }

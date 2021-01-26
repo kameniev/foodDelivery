@@ -2,7 +2,6 @@ import React from 'react'
 import { useTheme } from 'styled-components/native'
 import RNPickerSelect from 'react-native-picker-select'
 import ArrowDownIcon from 'assets/icons/arrow_down.svg'
-import { setStatusBarTranslucent } from 'expo-status-bar'
 
 interface SelectProps {
   placeholder?: { label: string; value: string }

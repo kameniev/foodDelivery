@@ -32,8 +32,7 @@ const SettingTextInput = ({
 export default SettingTextInput
 
 const InputContainer = styled.View`
-  margin: 0 auto;
-  margin-top: 10px;
+  margin: 10px auto 0;
   width: 90%;
 `
 

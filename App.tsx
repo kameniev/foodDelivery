@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'utils/themes'
-import Router from 'screens'
+import Router from 'screens/index'
 
 export default function App() {
   return (

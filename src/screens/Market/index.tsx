@@ -1,12 +1,31 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { useTheme } from 'styled-components'
+import { createStackNavigator } from '@react-navigation/stack'
+import MarketScreen from 'screens/Market/Market'
 
-function Market() {
+const Stack = createStackNavigator()
+
+const MarketRouter = () => {
+  const theme = useTheme()
+
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Market!</Text>
-    </View>
+    <Stack.Navigator
+      initialRouteName="Market"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: theme.colors.ui.blue,
+        },
+        headerTintColor: theme.colors.system.white,
+        headerBackTitleVisible: false,
+      }}
+    >
+      <Stack.Screen
+        name="Market"
+        options={{ title: 'Market', headerShown: false }}
+        component={MarketScreen}
+      />
+    </Stack.Navigator>
   )
 }
 
-export default Market
+export default MarketRouter

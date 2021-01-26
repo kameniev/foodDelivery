@@ -1,10 +1,19 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { Clock } from 'uikit/Icons'
+import {
+  Heart,
+  Stars0,
+  Stars1,
+  Stars2,
+  Stars3,
+  Stars4,
+  Stars5,
+  Clock,
+} from 'uikit/Icons'
 
 interface PlaceCardProps {
   isLiked: boolean
-  image: string
+  image: typeof Image
   rating: number
   numOfReviews: number
   deliveryTime: string
@@ -27,27 +36,29 @@ export default function PlaceCard({
       <CardImageWrapper>
         <CardImage source={image} />
         <IsLiked isLiked={isLiked}>
-          <LikedIcon name={'Heart'}></LikedIcon>
+          <HeartWrapper>
+            <Heart />
+          </HeartWrapper>
         </IsLiked>
         <RatingContainer>
           <RatingText>{rating}</RatingText>
 
           <StarsWrapper>
-            <Icon
-              name={
-                rating >= 0 && rating < 1
-                  ? 'Stars0'
-                  : rating >= 1 && rating < 2
-                  ? 'Stars1'
-                  : rating >= 2 && rating < 3
-                  ? 'Stars2'
-                  : rating >= 3 && rating < 4
-                  ? 'Stars3'
-                  : rating >= 4 && rating < 5
-                  ? 'Stars4'
-                  : 'Stars5'
-              }
-            />
+            <>
+              {rating < 1 ? (
+                <Stars0 />
+              ) : rating < 2 ? (
+                <Stars1 />
+              ) : rating < 3 ? (
+                <Stars2 />
+              ) : rating < 4 ? (
+                <Stars3 />
+              ) : rating < 5 ? (
+                <Stars4 />
+              ) : (
+                <Stars5 />
+              )}
+            </>
           </StarsWrapper>
           <ReviewsNumber>({numOfReviews})</ReviewsNumber>
         </RatingContainer>
@@ -83,19 +94,19 @@ const CardImage = styled.Image`
   border-radius: ${({ theme }) => theme.borderRadius.small};
 `
 
-const IsLiked = styled.TouchableOpacity`
+const IsLiked = styled.TouchableOpacity<{ isLiked: boolean }>`
   position: absolute;
   right: 9px;
   top: 9px;
+  width: 35px;
+  height: 35px;
   border-radius: 50px;
   background: ${({ isLiked }) =>
     isLiked ? 'rgba(2, 124, 173, 0.8)' : 'rgba(255, 255, 255, 0.8)'};
-  width: 35px;
-  height: 35px;
   justify-content: center;
 `
 
-const LikedIcon = styled(Icon)`
+const HeartWrapper = styled.View`
   margin: 0 auto;
 `
 

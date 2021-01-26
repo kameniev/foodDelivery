@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import AddressInput from 'uikit/AddressInput'
 import TextArea from 'uikit/TextArea'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import Button from 'uikit/Button'
 import Select from 'uikit/Select'
 
-function AddAddress() {
+const ProfileAddAddressScreen = () => {
   return (
     <Container>
       <KeyboardAwareScrollView>
@@ -43,7 +43,7 @@ function AddAddress() {
   )
 }
 
-export default AddAddress
+export default ProfileAddAddressScreen
 
 const Container = styled.SafeAreaView`
   height: 100%;
@@ -80,9 +80,9 @@ const CommentContainer = styled.View`
 
 const ButtonWrapper = styled.View`
   margin-top: 15px;
-  justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 100%;
+  justify-content: center;
   background-color: ${({ theme }) => theme.colors.ui.white};
 `
