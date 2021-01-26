@@ -13,7 +13,7 @@ import {
 
 interface PlaceCardProps {
   isLiked: boolean
-  image: typeof Image
+  image: string
   rating: number
   numOfReviews: number
   deliveryTime: string
