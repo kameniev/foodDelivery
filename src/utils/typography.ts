@@ -1,17 +1,40 @@
+export type FontWeight = 'regular' | 'semibold' | 'bold'
+
+export const primaryFont: Record<FontWeight, string> = {
+  regular: 'SFProDisplay-Regular',
+  semibold: 'SFProDisplay-Semibold',
+  bold: 'SFProDisplay-Bold',
+}
+
+export type SecondaryFonts = 'Roboto'
+
+export const secondaryFonts: Record<
+  SecondaryFonts,
+  Record<FontWeight, string>
+> = {
+  Roboto: {
+    regular: '',
+    semibold: '',
+    bold: '',
+  },
+}
+
 export const typeScale = {
-  header2: '36px',
-  header3: '17px',
-  header4: '15px',
-  header5: '12px',
-  header6: '11px',
+  heading1: '18px',
+  heading2: '17px',
+  heading3: '16px',
+  heading4: '15px',
+  description: '14px',
+  paragraph: '13px',
+  details: '11px',
 }
 
 export const lineHeight = {
-  header1: '45px',
-  header2: '36px',
-  header4: '22px',
-  header5: '20px',
-  header6: '15px',
-  header7: '14px',
-  header8: '13px',
+  heading1: '24px',
+  heading2: '22px',
+  heading3: '20px',
+  heading4: '18px',
+  description: '16px',
+  paragraph: '14px',
+  details: '12px',
 }

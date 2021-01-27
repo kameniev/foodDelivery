@@ -1,11 +1,18 @@
 import 'styled-components'
 import { DefaultTheme } from 'styled-components'
 import * as colors from './colors'
-import { typeScale, lineHeight } from './typography'
+import {
+  typeScale,
+  lineHeight,
+  primaryFont,
+  secondaryFonts,
+} from './typography'
 import { borderRadius, shadow } from './visual'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
+    primaryFont: typeof primaryFont
+    secondaryFonts: typeof secondaryFonts
     colors: typeof colors
     typeScale: typeof typeScale
     lineHeight: typeof lineHeight
@@ -15,6 +22,8 @@ declare module 'styled-components' {
 }
 
 export const theme: DefaultTheme = {
+  primaryFont,
+  secondaryFonts,
   colors,
   typeScale,
   lineHeight,
