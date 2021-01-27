@@ -4,6 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'utils/themes'
 import Router from 'screens/index'
+import Auth from 'screens/Auth/index'
 
 export default function App() {
   return (

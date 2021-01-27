@@ -12,10 +12,18 @@ const ProfileAddAddressScreen = () => {
       <KeyboardAwareScrollView>
         <AddressContainer>
           <DescriptionText>Адрес</DescriptionText>
-          <AddressInput description="Город" />
-          <AddressInput description="Улица" />
-          <AddressInput description="Номер дома" />
-          <AddressInput description="Номер квартиры/офис" />
+          <AddressInputContainer>
+            <AddressInput description="Город" />
+          </AddressInputContainer>
+          <AddressInputContainer>
+            <AddressInput description="Улица" />
+          </AddressInputContainer>
+          <AddressInputContainer>
+            <AddressInput description="Номер дома" />
+          </AddressInputContainer>
+          <AddressInputContainer>
+            <AddressInput description="Номер квартиры/офис" />
+          </AddressInputContainer>
         </AddressContainer>
         <DeliveryTypeContainer>
           <DescriptionText>Тип доставки</DescriptionText>
@@ -30,7 +38,9 @@ const ProfileAddAddressScreen = () => {
         </DeliveryTypeContainer>
         <CommentContainer>
           <DescriptionText>Комментарий к адресу доставки</DescriptionText>
-          <TextArea multiline={true} numberOfLines={4} />
+          <TextAreaContainer>
+            <TextArea multiline={true} numberOfLines={4} />
+          </TextAreaContainer>
         </CommentContainer>
         <ButtonWrapper>
           <Button
@@ -46,11 +56,10 @@ const ProfileAddAddressScreen = () => {
 export default ProfileAddAddressScreen
 
 const Container = styled.SafeAreaView`
-  height: 100%;
+  flex: 1;
 `
 
 const AddressContainer = styled.View`
-  width: 100%;
   padding-bottom: 25px;
   background-color: ${({ theme }) => theme.colors.ui.white};
 `
@@ -65,14 +74,12 @@ const DescriptionText = styled.Text`
 `
 
 const DeliveryTypeContainer = styled.View`
-  width: 100%;
   margin-top: 15px;
   padding-bottom: 25px;
   background-color: ${({ theme }) => theme.colors.ui.white};
 `
 
 const CommentContainer = styled.View`
-  width: 100%;
   margin-top: 15px;
   padding-bottom: 25px;
   background-color: ${({ theme }) => theme.colors.ui.white};
@@ -80,9 +87,19 @@ const CommentContainer = styled.View`
 
 const ButtonWrapper = styled.View`
   margin-top: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 100%;
+  padding: 10px 0 10px 0;
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.ui.white};
+`
+
+const AddressInputContainer = styled.View`
+  margin-top: 10px;
+  align-self: center;
+  width: 90%;
+`
+
+const TextAreaContainer = styled.View`
+  margin-top: 10px;
+  align-self: center;
+  width: 90%;
 `

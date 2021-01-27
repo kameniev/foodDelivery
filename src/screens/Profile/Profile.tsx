@@ -16,31 +16,41 @@ const ProfileScreen = () => {
 
   return (
     <Container>
-      <SettingCard
-        title="Личные данные"
-        Icon={SettingProfile}
-        onPress={() => navigation.navigate('SettingProfile')}
-      />
-      <SettingCard
-        title="Настройки"
-        Icon={SettingSettings}
-        onPress={() => navigation.navigate('SettingSettings')}
-      />
-      <SettingCard
-        title="Список заказов"
-        Icon={SettingList}
-        onPress={() => console.log('Success')}
-      />
-      <SettingCard
-        title="Избранное"
-        Icon={SettingFav}
-        onPress={() => console.log('Success')}
-      />
-      <SettingCard
-        title="Справка"
-        Icon={SettingInfo}
-        onPress={() => navigation.navigate('SettingInfo')}
-      />
+      <SettingCardWrapper>
+        <SettingCard
+          title="Личные данные"
+          Icon={SettingProfile}
+          onPress={() => navigation.navigate('SettingProfile')}
+        />
+      </SettingCardWrapper>
+      <SettingCardWrapper>
+        <SettingCard
+          title="Настройки"
+          Icon={SettingSettings}
+          onPress={() => navigation.navigate('SettingSettings')}
+        />
+      </SettingCardWrapper>
+      <SettingCardWrapper>
+        <SettingCard
+          title="Список заказов"
+          Icon={SettingList}
+          onPress={() => console.log('Success')}
+        />
+      </SettingCardWrapper>
+      <SettingCardWrapper>
+        <SettingCard
+          title="Избранное"
+          Icon={SettingFav}
+          onPress={() => console.log('Success')}
+        />
+      </SettingCardWrapper>
+      <SettingCardWrapper>
+        <SettingCard
+          title="Справка"
+          Icon={SettingInfo}
+          onPress={() => navigation.navigate('SettingInfo')}
+        />
+      </SettingCardWrapper>
     </Container>
   )
 }
@@ -48,3 +58,9 @@ const ProfileScreen = () => {
 export default ProfileScreen
 
 const Container = styled.SafeAreaView``
+
+const SettingCardWrapper = styled.View`
+  margin-top: 20px;
+  align-self: center;
+  width: 90%;
+`

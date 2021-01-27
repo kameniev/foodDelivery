@@ -26,10 +26,7 @@ const SettingTextInput = ({
 
 export default SettingTextInput
 
-const InputContainer = styled.View`
-  margin: 10px auto 0;
-  width: 90%;
-`
+const InputContainer = styled.View``
 
 const InputText = styled.Text`
   font-size: ${({ theme }) => theme.typeScale.header5};
@@ -38,7 +35,7 @@ const InputText = styled.Text`
 `
 
 const SettingInput = styled.TextInput`
-  height: 25px;
+  padding: 3px 0 3px 0;
   font-size: ${({ theme }) => theme.typeScale.header3};
   line-height: ${({ theme }) => theme.lineHeight.header5};
   font-weight: 600;

@@ -1,7 +1,8 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
-import styled from 'styled-components/native'
+import styled, { useTheme } from 'styled-components/native'
 import { SvgProps } from 'react-native-svg'
+import { theme } from 'utils/themes'
 
 interface SettingCardProps {
   title: string
@@ -10,9 +11,10 @@ interface SettingCardProps {
 }
 
 const SettingCard = ({ title, Icon, onPress }: SettingCardProps) => {
+  const theme = useTheme()
   return (
     <TouchableOpacity onPress={onPress}>
-      <CardContainer>
+      <CardContainer style={theme.shadow.basic}>
         <IconWrapper>
           <Icon width={25} height={25} />
         </IconWrapper>
@@ -25,13 +27,10 @@ const SettingCard = ({ title, Icon, onPress }: SettingCardProps) => {
 export default SettingCard
 
 const CardContainer = styled.View`
-  margin: 20px auto 0;
-  width: 90%;
   height: 75px;
   flex-direction: row;
   align-items: center;
   border-radius: ${({ theme }) => theme.borderRadius.little};
-  box-shadow: ${({ theme }) => theme.shadow.basic};
   background: #ffffff;
 `
 const IconWrapper = styled.View`

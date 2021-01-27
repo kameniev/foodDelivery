@@ -7,40 +7,48 @@ const ProfileUserScreen = () => {
     <Container>
       <Avatar source={require('assets/images/profile_avatar.jpg')} />
       <TextInputContainer>
-        <SettingTextInput
-          value="Александр"
-          description="Имя"
-          security={false}
-          onChange={() => {
-            console.log('')
-          }}
-        />
-        <SettingTextInput
-          value="+7 958 581 54 20"
-          description="Мобильный"
-          keyboardType="phone-pad"
-          security={false}
-          onChange={() => {
-            console.log('')
-          }}
-        />
-        <SettingTextInput
-          value="alex@mail.ru"
-          description="E-mail"
-          keyboardType="email-address"
-          security={false}
-          onChange={() => {
-            console.log('')
-          }}
-        />
-        <SettingTextInput
-          value="qwerty12345"
-          description="Пароль"
-          security={true}
-          onChange={() => {
-            console.log('')
-          }}
-        />
+        <SettingTextInputContainer>
+          <SettingTextInput
+            value="Александр"
+            description="Имя"
+            security={false}
+            onChange={() => {
+              console.log('')
+            }}
+          />
+        </SettingTextInputContainer>
+        <SettingTextInputContainer>
+          <SettingTextInput
+            value="+7 958 581 54 20"
+            description="Мобильный"
+            keyboardType="phone-pad"
+            security={false}
+            onChange={() => {
+              console.log('')
+            }}
+          />
+        </SettingTextInputContainer>
+        <SettingTextInputContainer>
+          <SettingTextInput
+            value="alex@mail.ru"
+            description="E-mail"
+            keyboardType="email-address"
+            security={false}
+            onChange={() => {
+              console.log('')
+            }}
+          />
+        </SettingTextInputContainer>
+        <SettingTextInputContainer>
+          <SettingTextInput
+            value="qwerty12345"
+            description="Пароль"
+            security={true}
+            onChange={() => {
+              console.log('')
+            }}
+          />
+        </SettingTextInputContainer>
       </TextInputContainer>
     </Container>
   )
@@ -59,8 +67,12 @@ const Avatar = styled.Image`
 
 const TextInputContainer = styled.View`
   margin-top: 20px;
-  padding-top: 10px;
-  padding-bottom: 40px;
-  width: 100%;
+  padding: 10px 0 40px 0;
   background-color: ${({ theme }) => theme.colors.ui.white};
+`
+
+const SettingTextInputContainer = styled.View`
+  margin-top: 10px;
+  align-self: center;
+  width: 90%;
 `

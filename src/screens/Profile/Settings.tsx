@@ -9,11 +9,13 @@ const ProfileSettingsScreen = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>()
   return (
     <Container>
-      <SettingCard
-        title={'Адреса доставки'}
-        Icon={Pointer}
-        onPress={() => navigation.navigate('SettingAddresses')}
-      />
+      <SettingCardContainer>
+        <SettingCard
+          title={'Адреса доставки'}
+          Icon={Pointer}
+          onPress={() => navigation.navigate('SettingAddresses')}
+        />
+      </SettingCardContainer>
     </Container>
   )
 }
@@ -21,3 +23,9 @@ const ProfileSettingsScreen = () => {
 export default ProfileSettingsScreen
 
 const Container = styled.SafeAreaView``
+
+const SettingCardContainer = styled.View`
+  margin-top: 20px;
+  align-self: center;
+  width: 90%;
+`

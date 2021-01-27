@@ -26,9 +26,7 @@ export default class ImagesCarousel extends React.Component {
   }
 }
 
-const CarouselWrapper = styled.View`
-  margin: 0 auto;
-`
+const CarouselWrapper = styled.View``
 
 const CarouselImage = styled.Image`
   border-radius: ${({ theme }) => theme.borderRadius.small};

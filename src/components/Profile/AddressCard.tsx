@@ -1,6 +1,6 @@
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
-import styled from 'styled-components/native'
+import styled, { useTheme } from 'styled-components/native'
 import { Pointer } from 'uikit/Icons'
 
 interface SettingCardProps {
@@ -9,10 +9,10 @@ interface SettingCardProps {
 }
 
 const AddressCard = ({ title, focused }: SettingCardProps) => {
-  let test = false
+  const theme = useTheme()
   return (
     <TouchableOpacity onPress={() => console.log('test')}>
-      <CardContainer focused={focused}>
+      <CardContainer focused={focused} style={theme.shadow.basic}>
         <IconWrapper>
           <Pointer width={25} />
         </IconWrapper>
@@ -25,15 +25,12 @@ const AddressCard = ({ title, focused }: SettingCardProps) => {
 export default AddressCard
 
 const CardContainer = styled.View<{ focused: boolean }>`
-  margin: 20px auto 0px;
   flex-direction: row;
   align-items: center;
   border-radius: ${({ theme }) => theme.borderRadius.little};
   border-color: ${({ theme }) => theme.colors.ui.blue};
   border-width: ${({ focused }) => (focused ? '1px' : '0px')};
-  box-shadow: ${({ theme }) => theme.shadow.basic};
   background: #ffffff;
-  width: 90%;
   height: 75px;
 `
 const IconWrapper = styled.View`

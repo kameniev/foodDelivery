@@ -1,10 +1,11 @@
 import React from 'react'
+import { KeyboardType } from 'react-native'
 import styled from 'styled-components/native'
 
 interface SettingTextInputProps {
   description: string
   security?: boolean
-  keyboardType?: string
+  keyboardType?: KeyboardType
   value: string
   onChange: (newValue: string) => void
 }
@@ -18,7 +19,7 @@ const SettingTextInput = ({
 }: SettingTextInputProps) => {
   return (
     <InputContainer>
-      <InputText onValueChange={onChange}>{description}</InputText>
+      <InputText>{description}</InputText>
       <SettingInput
         returnKeyType="done"
         defaultValue={value}
@@ -31,10 +32,7 @@ const SettingTextInput = ({
 
 export default SettingTextInput
 
-const InputContainer = styled.View`
-  margin: 10px auto 0;
-  width: 90%;
-`
+const InputContainer = styled.View``
 
 const InputText = styled.Text`
   font-size: ${({ theme }) => theme.typeScale.header5};

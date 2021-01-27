@@ -1,4 +1,5 @@
 import React from 'react'
+import { Image, ImageSourcePropType } from 'react-native'
 import styled from 'styled-components/native'
 import {
   Heart,
@@ -13,7 +14,7 @@ import {
 
 interface PlaceCardProps {
   isLiked: boolean
-  image: string
+  image: ImageSourcePropType
   rating: number
   numOfReviews: number
   deliveryTime: string
@@ -75,9 +76,7 @@ export default function PlaceCard({
   )
 }
 
-const CardWrapper = styled.TouchableOpacity`
-  margin: 0 auto;
-`
+const CardWrapper = styled.TouchableOpacity``
 
 const CardImageWrapper = styled.View`
   width: 345px;
@@ -104,11 +103,10 @@ const IsLiked = styled.TouchableOpacity<{ isLiked: boolean }>`
   background: ${({ isLiked }) =>
     isLiked ? 'rgba(2, 124, 173, 0.8)' : 'rgba(255, 255, 255, 0.8)'};
   justify-content: center;
+  align-items: center;
 `
 
-const HeartWrapper = styled.View`
-  margin: 0 auto;
-`
+const HeartWrapper = styled.View``
 
 const RatingContainer = styled.View`
   position: absolute;
@@ -133,8 +131,7 @@ const ReviewsNumber = styled.Text`
 
 const StarsWrapper = styled.View`
   width: 55px;
-  margin-left: 5px;
-  margin-top: 2px;
+  margin: 2px 0 0 5px;
 `
 
 const DeliveryTime = styled.View`
@@ -156,8 +153,7 @@ const TimeIconWrapper = styled.View`
 `
 
 const CardTitle = styled.Text`
-  margin-top: 20px;
-  margin-left: 3px;
+  margin: 20px 0 0 3px;
   font-size: ${({ theme }) => theme.typeScale.header3};
   line-height: ${({ theme }) => theme.lineHeight.header5};
   font-weight: bold;
@@ -165,7 +161,6 @@ const CardTitle = styled.Text`
 `
 
 const CuisineCategories = styled.Text`
-  margin-top: 7px;
-  margin-left: 3px;
+  margin: 7px 0 0 3px;
   color: ${({ theme }) => theme.colors.ui.gray};
 `

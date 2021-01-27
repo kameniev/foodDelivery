@@ -4,26 +4,26 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import TextInput from 'uikit/TextInput'
 import Button from 'uikit/Button'
 
-export default function Auth() {
+const Auth = () => {
   return (
     <Wrapper>
       <KeyboardAwareScrollView>
         <Logo>ЛОГО</Logo>
         <InputsContainer>
-          <TextInput
-            width="full"
-            placeholder="Ваш номер телефона"
-            keyboardType="phone-pad"
-            returnKeyType="done"
-          />
-          <InputWrapper>
+          <FirstInputWrapper>
             <TextInput
-              width="half"
+              placeholder="Ваш номер телефона"
+              keyboardType="phone-pad"
+              returnKeyType="done"
+            />
+          </FirstInputWrapper>
+          <SecondInputWrapper>
+            <TextInput
               placeholder="Введите код из смс"
               keyboardType="phone-pad"
               returnKeyType="done"
             />
-          </InputWrapper>
+          </SecondInputWrapper>
         </InputsContainer>
         <ButtonContainer>
           <Button title={'Отправить'} onPress={() => console.log('Success!')} />
@@ -32,6 +32,8 @@ export default function Auth() {
     </Wrapper>
   )
 }
+
+export default Auth
 
 const Wrapper = styled.View``
 
@@ -48,10 +50,16 @@ const InputsContainer = styled.View`
   margin-left: 15px;
 `
 
-const InputWrapper = styled.View`
+const SecondInputWrapper = styled.View`
   margin-top: 17px;
+  width: 50%;
+`
+
+const FirstInputWrapper = styled.View`
+  width: 95%;
 `
 
 const ButtonContainer = styled.View`
-  margin-top: 60%;
+  margin: 60% auto 0;
+  width: 90%;
 `

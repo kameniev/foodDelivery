@@ -4,6 +4,7 @@ import styled from 'styled-components/native'
 import ImagesCarousel from 'components/Home/ImagesCarousel'
 import PlaceCard from 'components/Home/PlaceCard'
 import categoryData from 'data/categoryData'
+import CardImage1 from 'assets/images/card_image1.jpg'
 
 const HomeMainScreen = () => {
   const renderCategoryItem = ({ item }) => {
@@ -27,7 +28,9 @@ const HomeMainScreen = () => {
         <Image source={require('assets/images/indexbg.png')} />
       </BackgroundWrapper>
       <ScrollView>
-        <ImagesCarousel />
+        <ImagesCarouselWrapper>
+          <ImagesCarousel />
+        </ImagesCarouselWrapper>
         <Subtitle>Категории ресторанов:</Subtitle>
         <FlatListWrapper>
           <FlatList
@@ -43,7 +46,7 @@ const HomeMainScreen = () => {
           <SingleCardWrapper>
             <PlaceCard
               name="мамалыга"
-              image={require('assets/images/card_image1.jpg')}
+              image={CardImage1}
               isLiked={false}
               rating={4.1}
               numOfReviews={35}
@@ -59,6 +62,10 @@ const HomeMainScreen = () => {
 
 export default HomeMainScreen
 
+const ImagesCarouselWrapper = styled.View`
+  margin: 0 auto;
+`
+
 const Container = styled.SafeAreaView``
 
 const BackgroundWrapper = styled.View`
@@ -66,7 +73,7 @@ const BackgroundWrapper = styled.View`
 `
 
 const Subtitle = styled.Text`
-  margin-top: 40px;
+  margin: 40px 0 0 15px;
   font-size: ${({ theme }) => theme.typeScale.header3};
   line-height: ${({ theme }) => theme.lineHeight.header5};
   font-weight: 600;
@@ -77,7 +84,7 @@ const ItemWrapper = styled.View`
 `
 
 const FlatListWrapper = styled.View`
-  margin-top: 15px;
+  margin: 15px 0 0 15px;
 `
 
 const ItemText = styled.Text`
@@ -103,7 +110,7 @@ const ItemImage = styled.Image`
 `
 
 const PopularSubtitle = styled.Text`
-  margin-top: 40px;
+  margin: 40px 0 0 15px;
   font-size: ${({ theme }) => theme.typeScale.header3};
   line-height: ${({ theme }) => theme.lineHeight.header5};
   font-weight: 600;
@@ -118,4 +125,5 @@ const CardContainer = styled.View`
 
 const SingleCardWrapper = styled.View`
   margin-bottom: 25px;
+  align-items: center;
 `

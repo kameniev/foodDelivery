@@ -10,14 +10,18 @@ const ProfileAddressesScreen = () => {
   return (
     <Container>
       <AddressCardsContainer>
-        <AddressCard
-          title={'Москва, \n пер. Филипповский, 4с1, кв.24'}
-          focused={true}
-        />
-        <AddressCard
-          title={'Москва, \n ул. Большая Якимонка 6, офис 5'}
-          focused={false}
-        />
+        <AddressCardWrapper>
+          <AddressCard
+            title={'Москва, \n пер. Филипповский, 4с1, кв.24'}
+            focused={true}
+          />
+        </AddressCardWrapper>
+        <AddressCardWrapper>
+          <AddressCard
+            title={'Москва, \n ул. Большая Якимонка 6, офис 5'}
+            focused={false}
+          />
+        </AddressCardWrapper>
       </AddressCardsContainer>
       <AddAddressWrapper>
         <Button
@@ -31,15 +35,22 @@ const ProfileAddressesScreen = () => {
 
 export default ProfileAddressesScreen
 
-const Container = styled.SafeAreaView``
+const Container = styled.SafeAreaView`
+  flex: 1;
+`
 
 const AddressCardsContainer = styled.ScrollView`
-  height: 80%;
+  flex: 0.8;
 `
 
 const AddAddressWrapper = styled.View`
   justify-content: center;
-  width: 100%;
-  height: 20%;
+  flex: 0.2;
   background: ${({ theme }) => theme.colors.ui.white};
+`
+
+const AddressCardWrapper = styled.View`
+  margin-top: 20px;
+  align-self: center;
+  width: 90%;
 `

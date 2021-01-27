@@ -9,26 +9,34 @@ const ProfileInfoScreen = () => {
   const navigation = useNavigation<ProfileScreenNavigationProp>()
   return (
     <Container>
-      <SettingCard
-        title={'Работа у нас'}
-        Icon={List}
-        onPress={() => console.log('Success!')}
-      />
-      <SettingCard
-        title={'Новости'}
-        Icon={List}
-        onPress={() => console.log('Success!')}
-      />
-      <SettingCard
-        title={'О приложении'}
-        Icon={List}
-        onPress={() => console.log('Success!')}
-      />
-      <SettingCard
-        title={'О нас'}
-        Icon={List}
-        onPress={() => navigation.navigate('AboutUs')}
-      />
+      <SettingCardWrapper>
+        <SettingCard
+          title={'Работа у нас'}
+          Icon={List}
+          onPress={() => console.log('Success!')}
+        />
+      </SettingCardWrapper>
+      <SettingCardWrapper>
+        <SettingCard
+          title={'Новости'}
+          Icon={List}
+          onPress={() => console.log('Success!')}
+        />
+      </SettingCardWrapper>
+      <SettingCardWrapper>
+        <SettingCard
+          title={'О приложении'}
+          Icon={List}
+          onPress={() => console.log('Success!')}
+        />
+      </SettingCardWrapper>
+      <SettingCardWrapper>
+        <SettingCard
+          title={'О нас'}
+          Icon={List}
+          onPress={() => navigation.navigate('AboutUs')}
+        />
+      </SettingCardWrapper>
     </Container>
   )
 }
@@ -36,3 +44,9 @@ const ProfileInfoScreen = () => {
 export default ProfileInfoScreen
 
 const Container = styled.SafeAreaView``
+
+const SettingCardWrapper = styled.View`
+  margin-top: 20px;
+  align-self: center;
+  width: 90%;
+`

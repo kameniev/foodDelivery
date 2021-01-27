@@ -1,7 +1,7 @@
 export const typeScale = {
   header2: '36px',
   header3: '17px',
-  header4: '13px',
+  header4: '15px',
   header5: '12px',
   header6: '11px',
 }
