@@ -1,6 +1,6 @@
 import 'styled-components'
 import { DefaultTheme } from 'styled-components'
-import * as colors from './colors'
+import colors from './colors'
 import {
   typeScale,
   lineHeight,

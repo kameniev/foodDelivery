@@ -1,9 +1,6 @@
-export const system = {
+export default {
   white: '#FFF',
   black: '#181717',
-}
-
-export const ui = {
   blue: '#027CAD',
   gray: '#555555',
   darkGrey: '#303030',

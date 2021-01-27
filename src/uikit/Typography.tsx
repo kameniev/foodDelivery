@@ -1,9 +1,9 @@
 import styled from 'styled-components/native'
-import * as colors from 'utils/colors'
+import colors from 'utils/colors'
 import { FontWeight, SecondaryFonts } from 'utils/typography'
 
 interface BaseTextProps {
-  color?: typeof colors
+  color: keyof typeof colors
   weight?: FontWeight
   family?: SecondaryFonts
 }
@@ -14,7 +14,7 @@ export const BaseText = styled.Text<BaseTextProps>`
       ? theme.secondaryFonts[family][weight || 'regular']
       : theme.primaryFont[weight || 'regular']};
   font-weight: ${({ weight }) => weight};
-  color: ${({ theme, color }) => color || theme.colors.system.white};
+  color: ${({ theme, color }) => colors[color] || theme.colors.white};
 `
 
 export const Heading1 = styled(BaseText)`
