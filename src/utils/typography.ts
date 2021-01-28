@@ -13,9 +13,9 @@ export const secondaryFonts: Record<
   Record<FontWeight, string>
 > = {
   Roboto: {
-    regular: '',
-    semibold: '',
-    bold: '',
+    regular: 'Roboto-Regular',
+    semibold: 'Roboto-Medium',
+    bold: 'Roboto-Bold',
   },
 }
 

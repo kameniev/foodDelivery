@@ -8,12 +8,18 @@ interface BaseTextProps {
   family?: SecondaryFonts
 }
 
+const WEIGHT_NAME_TO_VALUE: Record<FontWeight, string> = {
+  regular: '400',
+  semibold: '600',
+  bold: '700',
+}
+
 export const BaseText = styled.Text<BaseTextProps>`
   font-family: ${({ theme, weight, family }) =>
     family
       ? theme.secondaryFonts[family][weight || 'regular']
       : theme.primaryFont[weight || 'regular']};
-  font-weight: ${({ weight }) => weight || 'regular'};
+  font-weight: ${({ weight }) => WEIGHT_NAME_TO_VALUE[weight || 'regular']};
   color: ${({ theme, color }) => colors[color] || theme.colors.white};
 `
 
