@@ -48,6 +48,7 @@ const PlaceCard = ({
     <Container>
       <CardContainer>
         <CardImage source={image}>
+          <CoverBackground />
           <BottomContainer>
             <RatingContainer>
               <RatingText color="white" weight="bold">
@@ -108,6 +109,13 @@ const CardImage = styled.ImageBackground`
   justify-content: flex-end;
   border-radius: ${({ theme }) => theme.borderRadius.small};
   overflow: hidden;
+`
+
+const CoverBackground = styled.View`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 `
 
 const IsLiked = styled.TouchableOpacity`
