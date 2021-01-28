@@ -5,7 +5,7 @@ const TextArea = styled.TextInput`
   padding: 13px 5px 13px 5px;
   border: 1px solid rgba(85, 85, 85, 0.2);
   height: 90px;
-  font-size: ${({ theme }) => theme.typeScale.header4};
-  line-height: ${({ theme }) => theme.lineHeight.header4};
+  font-size: ${({ theme }) => theme.typeScale.paragraph};
+  line-height: ${({ theme }) => theme.lineHeight.paragraph};
 `
 export default TextArea

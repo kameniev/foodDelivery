@@ -11,6 +11,7 @@ import {
   Stars5,
   Clock,
 } from 'uikit/Icons'
+import { Paragraph, Details, Heading1, BaseText } from 'uikit/Typography'
 
 interface PlaceCardProps {
   isLiked: boolean
@@ -42,7 +43,9 @@ export default function PlaceCard({
           </HeartWrapper>
         </IsLiked>
         <RatingContainer>
-          <RatingText>{rating}</RatingText>
+          <RatingText color="white" weight="bold">
+            {rating}
+          </RatingText>
 
           <StarsWrapper>
             <>
@@ -61,17 +64,19 @@ export default function PlaceCard({
               )}
             </>
           </StarsWrapper>
-          <ReviewsNumber>({numOfReviews})</ReviewsNumber>
+          <ReviewsNumber color="white">({numOfReviews})</ReviewsNumber>
         </RatingContainer>
         <DeliveryTime>
           <TimeIconWrapper>
             <Clock />
           </TimeIconWrapper>
-          <TimeText>{deliveryTime}</TimeText>
+          <TimeText color="white">{deliveryTime}</TimeText>
         </DeliveryTime>
       </CardImageWrapper>
-      <CardTitle>{name}</CardTitle>
-      <CuisineCategories>{cuisine}</CuisineCategories>
+      <CardTitle color="black" weight="bold">
+        {name}
+      </CardTitle>
+      <CuisineCategories color="gray">{cuisine}</CuisineCategories>
     </CardWrapper>
   )
 }
@@ -115,18 +120,10 @@ const RatingContainer = styled.View`
   flex-direction: row;
 `
 
-const RatingText = styled.Text`
-  font-size: ${({ theme }) => theme.typeScale.header5};
-  line-height: ${({ theme }) => theme.lineHeight.header7};
-  color: ${({ theme }) => theme.colors.system.white};
-  font-weight: bold;
-`
+const RatingText = styled(Paragraph)``
 
-const ReviewsNumber = styled.Text`
+const ReviewsNumber = styled(Details)`
   margin-left: 5px;
-  font-size: ${({ theme }) => theme.typeScale.header5};
-  line-height: ${({ theme }) => theme.lineHeight.header7};
-  color: ${({ theme }) => theme.colors.system.white};
 `
 
 const StarsWrapper = styled.View`
@@ -141,26 +138,18 @@ const DeliveryTime = styled.View`
   flex-direction: row;
 `
 
-const TimeText = styled.Text`
-  font-size: ${({ theme }) => theme.typeScale.header5};
-  line-height: ${({ theme }) => theme.lineHeight.header7};
-  color: ${({ theme }) => theme.colors.system.white};
-`
+const TimeText = styled(Details)``
 
 const TimeIconWrapper = styled.View`
   width: 14px;
   margin-right: 5px;
 `
 
-const CardTitle = styled.Text`
+const CardTitle = styled(Heading1)`
   margin: 20px 0 0 3px;
-  font-size: ${({ theme }) => theme.typeScale.header3};
-  line-height: ${({ theme }) => theme.lineHeight.header5};
-  font-weight: bold;
   text-transform: uppercase;
 `
 
-const CuisineCategories = styled.Text`
+const CuisineCategories = styled(BaseText)`
   margin: 7px 0 0 3px;
-  color: ${({ theme }) => theme.colors.ui.gray};
 `

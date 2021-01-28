@@ -24,9 +24,9 @@ const Select = ({ placeholder, options, onChange, disabled }: SelectProps) => {
         inputIOS: {
           alignSelf: 'center',
           marginTop: 15,
-          borderColor: theme.colors.ui.transparentGray,
+          borderColor: theme.colors.transparentGray,
           borderBottomWidth: 1,
-          color: theme.colors.system.black,
+          color: theme.colors.black,
           height: 35,
           width: '90%',
           fontSize: 17,
@@ -37,12 +37,12 @@ const Select = ({ placeholder, options, onChange, disabled }: SelectProps) => {
           paddingVertical: 10,
           paddingHorizontal: 15,
           paddingRight: 40,
-          backgroundColor: theme.colors.system.white,
+          backgroundColor: theme.colors.white,
 
-          color: theme.colors.system.black,
+          color: theme.colors.black,
         },
         placeholder: {
-          color: theme.colors.system.black,
+          color: theme.colors.black,
         },
         iconContainer: {
           top: '42%',

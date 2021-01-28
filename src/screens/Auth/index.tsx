@@ -3,12 +3,13 @@ import styled from 'styled-components/native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import TextInput from 'uikit/TextInput'
 import Button from 'uikit/Button'
+import { Heading1 } from 'uikit/Typography'
 
 const Auth = () => {
   return (
     <Wrapper>
       <KeyboardAwareScrollView>
-        <Logo>ЛОГО</Logo>
+        <Logo color="blue">ЛОГО</Logo>
         <InputsContainer>
           <FirstInputWrapper>
             <TextInput
@@ -37,12 +38,9 @@ export default Auth
 
 const Wrapper = styled.View``
 
-const Logo = styled.Text`
+const Logo = styled(Heading1)`
   margin-top: 32%;
   text-align: center;
-  color: ${({ theme }) => theme.colors.ui.blue};
-  font-size: ${({ theme }) => theme.typeScale.header2};
-  line-height: ${({ theme }) => theme.lineHeight.header2};
 `
 
 const InputsContainer = styled.View`

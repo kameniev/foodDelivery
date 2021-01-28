@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import { Heading2 } from 'uikit/Typography'
 
 interface ButtonProps {
   title: string
@@ -9,7 +10,7 @@ interface ButtonProps {
 const Button = ({ title, onPress }: ButtonProps) => {
   return (
     <ButtonContainer onPress={onPress}>
-      <ButtonText>{title}</ButtonText>
+      <ButtonText color="white">{title}</ButtonText>
     </ButtonContainer>
   )
 }
@@ -19,12 +20,9 @@ export default Button
 const ButtonContainer = styled.TouchableOpacity`
   height: 45px;
   border-radius: ${({ theme }) => theme.borderRadius.large};
-  background-color: ${({ theme }) => theme.colors.ui.blue};
+  background-color: ${({ theme }) => theme.colors.blue};
 `
 
-const ButtonText = styled.Text`
+const ButtonText = styled(Heading2)`
   text-align: center;
-  line-height: ${({ theme }) => theme.lineHeight.header1};
-  font-size: ${({ theme }) => theme.typeScale.header3};
-  color: ${({ theme }) => theme.colors.system.white};
 `

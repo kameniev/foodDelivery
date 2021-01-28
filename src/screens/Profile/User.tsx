@@ -68,7 +68,7 @@ const Avatar = styled.Image`
 const TextInputContainer = styled.View`
   margin-top: 20px;
   padding: 10px 0 40px 0;
-  background-color: ${({ theme }) => theme.colors.ui.white};
+  background-color: ${({ theme }) => theme.colors.white};
 `
 
 const SettingTextInputContainer = styled.View`

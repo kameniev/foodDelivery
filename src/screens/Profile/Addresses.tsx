@@ -46,7 +46,7 @@ const AddressCardsContainer = styled.ScrollView`
 const AddAddressWrapper = styled.View`
   justify-content: center;
   flex: 0.2;
-  background: ${({ theme }) => theme.colors.ui.white};
+  background: ${({ theme }) => theme.colors.white};
 `
 
 const AddressCardWrapper = styled.View`

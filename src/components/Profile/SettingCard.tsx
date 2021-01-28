@@ -3,6 +3,7 @@ import { TouchableOpacity } from 'react-native'
 import styled, { useTheme } from 'styled-components/native'
 import { SvgProps } from 'react-native-svg'
 import { theme } from 'utils/themes'
+import { Heading2 } from 'uikit/Typography'
 
 interface SettingCardProps {
   title: string
@@ -18,7 +19,9 @@ const SettingCard = ({ title, Icon, onPress }: SettingCardProps) => {
         <IconWrapper>
           <Icon width={25} height={25} />
         </IconWrapper>
-        <CardText>{title}</CardText>
+        <CardText color="black" weight="semibold">
+          {title}
+        </CardText>
       </CardContainer>
     </TouchableOpacity>
   )
@@ -37,10 +40,7 @@ const IconWrapper = styled.View`
   margin-left: 25px;
 `
 
-const CardText = styled.Text`
+const CardText = styled(Heading2)`
   margin-left: 22px;
   width: 75%;
-  font-size: ${({ theme }) => theme.typeScale.header3};
-  line-height: ${({ theme }) => theme.lineHeight.header5};
-  font-weight: 600;
 `

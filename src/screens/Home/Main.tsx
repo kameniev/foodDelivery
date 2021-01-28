@@ -5,6 +5,7 @@ import ImagesCarousel from 'components/Home/ImagesCarousel'
 import PlaceCard from 'components/Home/PlaceCard'
 import categoryData from 'data/categoryData'
 import CardImage1 from 'assets/images/card_image1.jpg'
+import { Heading2, Paragraph } from 'uikit/Typography'
 
 const HomeMainScreen = () => {
   const renderCategoryItem = ({ item }) => {
@@ -14,7 +15,12 @@ const HomeMainScreen = () => {
           <ImageWrapper>
             <ItemImage source={item.image} />
           </ImageWrapper>
-          <ItemText numberOfLines={1} ellipsizeMode="tail">
+          <ItemText
+            color="black"
+            weight="bold"
+            numberOfLines={1}
+            ellipsizeMode="tail"
+          >
             {item.title}
           </ItemText>
         </ItemWrapper>
@@ -31,7 +37,9 @@ const HomeMainScreen = () => {
         <ImagesCarouselWrapper>
           <ImagesCarousel />
         </ImagesCarouselWrapper>
-        <Subtitle>Категории ресторанов:</Subtitle>
+        <Subtitle color="black" weight="bold">
+          Категории ресторанов:
+        </Subtitle>
         <FlatListWrapper>
           <FlatList
             data={categoryData}
@@ -41,7 +49,9 @@ const HomeMainScreen = () => {
             showsHorizontalScrollIndicator={false}
           />
         </FlatListWrapper>
-        <PopularSubtitle>Популярные заведения города:</PopularSubtitle>
+        <PopularSubtitle color="black" weight="bold">
+          Популярные заведения города:
+        </PopularSubtitle>
         <CardContainer>
           <SingleCardWrapper>
             <PlaceCard
@@ -72,11 +82,8 @@ const BackgroundWrapper = styled.View`
   position: absolute;
 `
 
-const Subtitle = styled.Text`
+const Subtitle = styled(Heading2)`
   margin: 40px 0 0 15px;
-  font-size: ${({ theme }) => theme.typeScale.header3};
-  line-height: ${({ theme }) => theme.lineHeight.header5};
-  font-weight: 600;
 `
 
 const ItemWrapper = styled.View`
@@ -87,18 +94,14 @@ const FlatListWrapper = styled.View`
   margin: 15px 0 0 15px;
 `
 
-const ItemText = styled.Text`
-  margin-left: 5px;
-  margin-top: 10px;
-  line-height: ${({ theme }) => theme.lineHeight.header6};
-  font-size: ${({ theme }) => theme.typeScale.header4};
-  font-weight: 600;
+const ItemText = styled(Paragraph)`
+  margin: 10px 0 0 5px;
 `
 
 const ImageWrapper = styled.View`
   width: 95px;
   height: 95px;
-  background-color: ${({ theme }) => theme.colors.ui.blue};
+  background-color: ${({ theme }) => theme.colors.blue};
   border-radius: ${({ theme }) => theme.borderRadius.small};
   overflow: hidden;
 `
@@ -109,17 +112,14 @@ const ItemImage = styled.Image`
   margin-left: 30px;
 `
 
-const PopularSubtitle = styled.Text`
+const PopularSubtitle = styled(Heading2)`
   margin: 40px 0 0 15px;
-  font-size: ${({ theme }) => theme.typeScale.header3};
-  line-height: ${({ theme }) => theme.lineHeight.header5};
-  font-weight: 600;
 `
 
 const CardContainer = styled.View`
   margin-top: 15px;
-  font-size: ${({ theme }) => theme.typeScale.header4};
-  line-height: ${({ theme }) => theme.lineHeight.header8};
+  font-size: ${({ theme }) => theme.typeScale.heading4};
+  line-height: ${({ theme }) => theme.lineHeight.heading4};
   color: #555555;
 `
 

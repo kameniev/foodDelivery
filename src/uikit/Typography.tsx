@@ -21,3 +21,33 @@ export const Heading1 = styled(BaseText)`
   font-size: ${({ theme }) => theme.typeScale.heading1};
   line-height: ${({ theme }) => theme.lineHeight.heading1};
 `
+
+export const Heading2 = styled(BaseText)`
+  font-size: ${({ theme }) => theme.typeScale.heading2};
+  line-height: ${({ theme }) => theme.lineHeight.heading2};
+`
+
+export const Heading3 = styled(BaseText)`
+  font-size: ${({ theme }) => theme.typeScale.heading3};
+  line-height: ${({ theme }) => theme.lineHeight.heading3};
+`
+
+export const Heading4 = styled(BaseText)`
+  font-size: ${({ theme }) => theme.typeScale.heading4};
+  line-height: ${({ theme }) => theme.lineHeight.heading4};
+`
+
+export const Description = styled(BaseText)`
+  font-size: ${({ theme }) => theme.typeScale.description};
+  line-height: ${({ theme }) => theme.lineHeight.description};
+`
+
+export const Paragraph = styled(BaseText)`
+  font-size: ${({ theme }) => theme.typeScale.paragraph};
+  line-height: ${({ theme }) => theme.lineHeight.paragraph};
+`
+
+export const Details = styled(BaseText)`
+  font-size: ${({ theme }) => theme.typeScale.details};
+  line-height: ${({ theme }) => theme.lineHeight.details};
+`

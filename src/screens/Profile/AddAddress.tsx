@@ -5,13 +5,16 @@ import AddressInput from 'uikit/AddressInput'
 import TextArea from 'uikit/TextArea'
 import Button from 'uikit/Button'
 import Select from 'uikit/Select'
+import { Heading4 } from 'uikit/Typography'
 
 const ProfileAddAddressScreen = () => {
   return (
     <Container>
       <KeyboardAwareScrollView>
         <AddressContainer>
-          <DescriptionText>Адрес</DescriptionText>
+          <DescriptionText color="blue" weight="bold">
+            Адрес
+          </DescriptionText>
           <AddressInputContainer>
             <AddressInput description="Город" />
           </AddressInputContainer>
@@ -26,7 +29,9 @@ const ProfileAddAddressScreen = () => {
           </AddressInputContainer>
         </AddressContainer>
         <DeliveryTypeContainer>
-          <DescriptionText>Тип доставки</DescriptionText>
+          <DescriptionText color="blue" weight="bold">
+            Тип доставки
+          </DescriptionText>
           <Select
             onChange={(newValue) => console.log(newValue)}
             options={[
@@ -37,7 +42,9 @@ const ProfileAddAddressScreen = () => {
           />
         </DeliveryTypeContainer>
         <CommentContainer>
-          <DescriptionText>Комментарий к адресу доставки</DescriptionText>
+          <DescriptionText color="blue" weight="bold">
+            Комментарий к адресу доставки
+          </DescriptionText>
           <TextAreaContainer>
             <TextArea multiline={true} numberOfLines={4} />
           </TextAreaContainer>
@@ -61,35 +68,30 @@ const Container = styled.SafeAreaView`
 
 const AddressContainer = styled.View`
   padding-bottom: 25px;
-  background-color: ${({ theme }) => theme.colors.ui.white};
+  background-color: ${({ theme }) => theme.colors.white};
 `
 
-const DescriptionText = styled.Text`
-  margin-top: 15px;
-  margin-left: 20px;
-  color: ${({ theme }) => theme.colors.ui.blue};
-  font-size: ${({ theme }) => theme.typeScale.header3};
-  line-height: ${({ theme }) => theme.lineHeight.header4};
-  font-weight: 600;
+const DescriptionText = styled(Heading4)`
+  margin: 15px 0 0 20px;
 `
 
 const DeliveryTypeContainer = styled.View`
   margin-top: 15px;
   padding-bottom: 25px;
-  background-color: ${({ theme }) => theme.colors.ui.white};
+  background-color: ${({ theme }) => theme.colors.white};
 `
 
 const CommentContainer = styled.View`
   margin-top: 15px;
   padding-bottom: 25px;
-  background-color: ${({ theme }) => theme.colors.ui.white};
+  background-color: ${({ theme }) => theme.colors.white};
 `
 
 const ButtonWrapper = styled.View`
   margin-top: 15px;
   padding: 10px 0 10px 0;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.ui.white};
+  background-color: ${({ theme }) => theme.colors.white};
 `
 
 const AddressInputContainer = styled.View`

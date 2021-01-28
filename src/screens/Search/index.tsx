@@ -13,9 +13,9 @@ const SearchRouter = () => {
       initialRouteName="Search"
       screenOptions={{
         headerStyle: {
-          backgroundColor: theme.colors.ui.blue,
+          backgroundColor: theme.colors.blue,
         },
-        headerTintColor: theme.colors.system.white,
+        headerTintColor: theme.colors.white,
         headerBackTitleVisible: false,
       }}
     >
