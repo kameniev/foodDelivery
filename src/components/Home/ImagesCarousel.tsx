@@ -3,39 +3,37 @@ import styled from 'styled-components/native'
 import Carousel from 'react-native-snap-carousel'
 import carouselData from 'data/carouselData'
 
-export default class ImagesCarousel extends React.Component {
-  _renderItem = ({ item }) => {
-    return (
-      <Wrapper>
-        <CarouselImage source={item.image} />
-      </Wrapper>
-    )
-  }
+const ImagesCarousel = () => {
+  const renderItem = ({ item }) => (
+    <Wrapper>
+      <CarouselImage source={item.image} />
+    </Wrapper>
+  )
 
-  render() {
-    return (
-      <CarouselWrapper>
-        <Carousel
-          data={carouselData}
-          renderItem={this._renderItem}
-          sliderWidth={345}
-          itemWidth={345}
-        />
-      </CarouselWrapper>
-    )
-  }
+  return (
+    <CarouselContainer>
+      <Carousel
+        data={carouselData}
+        renderItem={renderItem}
+        sliderWidth={345}
+        itemWidth={345}
+      />
+    </CarouselContainer>
+  )
 }
 
-const CarouselWrapper = styled.View``
+export default ImagesCarousel
+
+const CarouselContainer = styled.View``
 
 const CarouselImage = styled.Image`
-  border-radius: ${({ theme }) => theme.borderRadius.small};
-  width: 345px;
+  width: 345px; // ?
   height: 260px;
+  border-radius: ${({ theme }) => theme.borderRadius.small};
 `
 
 const Wrapper = styled.View`
-  margin: 20px auto 0;
-  width: 345px;
+  margin: 20px auto 0; // ? auto
+  width: 345px; // ? без ширины
   height: 260px;
 `
