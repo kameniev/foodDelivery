@@ -13,7 +13,7 @@ export const BaseText = styled.Text<BaseTextProps>`
     family
       ? theme.secondaryFonts[family][weight || 'regular']
       : theme.primaryFont[weight || 'regular']};
-  font-weight: ${({ weight }) => weight};
+  font-weight: ${({ weight }) => weight || 'regular'};
   color: ${({ theme, color }) => colors[color] || theme.colors.white};
 `
 
