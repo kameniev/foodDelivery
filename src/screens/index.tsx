@@ -38,7 +38,7 @@ const RootRouter = () => {
           }
           return (
             <IconContainer>
-              <Icon width={30} height={30} />
+              <Icon width={25} height={25} />
             </IconContainer>
           )
         },

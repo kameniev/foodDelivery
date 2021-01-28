@@ -7,14 +7,15 @@ import MarketOutline from 'assets/icons/Navigator/market_outline.svg'
 import Profile from 'assets/icons/Navigator/profile.svg'
 import ProfileOutline from 'assets/icons/Navigator/profile_outline.svg'
 
-import Heart from 'assets/icons/PlaceCard/Heart.svg'
+import HeartStroke from 'assets/icons/PlaceCard/heart_stroke.svg'
+import HeartFill from 'assets/icons/PlaceCard/heart_fill.svg'
 import Stars0 from 'assets/icons/PlaceCard/stars0.svg'
 import Stars1 from 'assets/icons/PlaceCard/stars1.svg'
 import Stars2 from 'assets/icons/PlaceCard/stars2.svg'
 import Stars3 from 'assets/icons/PlaceCard/stars3.svg'
 import Stars4 from 'assets/icons/PlaceCard/stars4.svg'
 import Stars5 from 'assets/icons/PlaceCard/stars5.svg'
-import Clock from 'assets/icons/PlaceCard/Clock.svg'
+import Clock from 'assets/icons/PlaceCard/clock.svg'
 import SettingFav from 'assets/icons/SettingCards/setting_fav.svg'
 import SettingInfo from 'assets/icons/SettingCards/setting_info.svg'
 import SettingList from 'assets/icons/SettingCards/setting_list.svg'
@@ -34,7 +35,8 @@ export {
   Profile,
   ProfileOutline,
   //
-  Heart,
+  HeartStroke,
+  HeartFill,
   Stars0,
   Stars1,
   Stars2,

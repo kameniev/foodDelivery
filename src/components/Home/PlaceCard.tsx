@@ -1,8 +1,9 @@
 import React from 'react'
 import { Image, ImageSourcePropType } from 'react-native'
-import styled from 'styled-components/native'
+import styled, { useTheme } from 'styled-components/native'
 import {
-  Heart,
+  HeartStroke,
+  HeartFill,
   Stars0,
   Stars1,
   Stars2,
@@ -11,7 +12,7 @@ import {
   Stars5,
   Clock,
 } from 'uikit/Icons'
-import { Paragraph, Details, Heading1, BaseText } from 'uikit/Typography'
+import { Paragraph, Details, Heading1, Description } from 'uikit/Typography'
 
 interface PlaceCardProps {
   isLiked: boolean
@@ -23,7 +24,16 @@ interface PlaceCardProps {
   cuisineCategories: Array<string>
 }
 
-export default function PlaceCard({
+const getStars = (rating: number) => {
+  if (rating > 4) return <Stars5 />
+  if (rating > 3) return <Stars4 />
+  if (rating > 2) return <Stars3 />
+  if (rating > 1) return <Stars2 />
+  if (rating > 0) return <Stars1 />
+  return <Stars0 />
+}
+
+const PlaceCard = ({
   isLiked,
   image,
   rating,
@@ -31,125 +41,138 @@ export default function PlaceCard({
   deliveryTime,
   name,
   cuisineCategories,
-}: PlaceCardProps) {
-  const cuisine = cuisineCategories.join(' \u00B7 ')
-  return (
-    <CardWrapper>
-      <CardImageWrapper>
-        <CardImage source={image} />
-        <IsLiked isLiked={isLiked}>
-          <HeartWrapper>
-            <Heart />
-          </HeartWrapper>
-        </IsLiked>
-        <RatingContainer>
-          <RatingText color="white" weight="bold">
-            {rating}
-          </RatingText>
+}: PlaceCardProps) => {
+  const theme = useTheme()
 
-          <StarsWrapper>
-            <>
-              {rating < 1 ? (
-                <Stars0 />
-              ) : rating < 2 ? (
-                <Stars1 />
-              ) : rating < 3 ? (
-                <Stars2 />
-              ) : rating < 4 ? (
-                <Stars3 />
-              ) : rating < 5 ? (
-                <Stars4 />
-              ) : (
-                <Stars5 />
-              )}
-            </>
-          </StarsWrapper>
-          <ReviewsNumber color="white">({numOfReviews})</ReviewsNumber>
-        </RatingContainer>
-        <DeliveryTime>
-          <TimeIconWrapper>
-            <Clock />
-          </TimeIconWrapper>
-          <TimeText color="white">{deliveryTime}</TimeText>
-        </DeliveryTime>
-      </CardImageWrapper>
+  return (
+    <Container>
+      <CardContainer>
+        <CardImage source={image}>
+          <BottomContainer>
+            <RatingContainer>
+              <RatingText color="white" weight="bold">
+                {rating.toFixed(1)}
+              </RatingText>
+              <StarsWrapper>{getStars(rating)}</StarsWrapper>
+              <ReviewsNumber color="white">({numOfReviews})</ReviewsNumber>
+            </RatingContainer>
+
+            <DeliveryContainer>
+              <Clock width={14} height={14} />
+              <TimeText color="white">{deliveryTime}</TimeText>
+            </DeliveryContainer>
+          </BottomContainer>
+        </CardImage>
+
+        <IsLiked>
+          {isLiked ? (
+            <HeartFill width={20} height={20} fill={theme.colors.red} />
+          ) : (
+            <HeartStroke width={20} height={20} fill={theme.colors.gray} />
+          )}
+        </IsLiked>
+      </CardContainer>
+
       <CardTitle color="black" weight="bold">
         {name}
       </CardTitle>
-      <CuisineCategories color="gray">{cuisine}</CuisineCategories>
-    </CardWrapper>
+      <CuisineCategoriesContainer>
+        {cuisineCategories.map((category, index) => (
+          <>
+            <CuisineCategory key={index} color="gray">
+              {category}
+            </CuisineCategory>
+            {index !== cuisineCategories.length - 1 && (
+              <CuisineCategoryDivider />
+            )}
+          </>
+        ))}
+      </CuisineCategoriesContainer>
+    </Container>
   )
 }
 
-const CardWrapper = styled.TouchableOpacity``
+export default PlaceCard
 
-const CardImageWrapper = styled.View`
-  width: 345px;
-  height: 220px;
-  border-radius: ${({ theme }) => theme.borderRadius.small};
-  background-color: rgba(0, 0, 0, 1);
-  z-index: 1;
+const Container = styled.View`
+  margin-top: 30px;
+  padding-bottom: 27px;
+  border-bottom-color: rgba(85, 85, 85, 0.1);
+  border-bottom-width: 0.5px;
 `
 
-const CardImage = styled.Image`
-  width: 345px;
+const CardContainer = styled.View``
+
+const CardImage = styled.ImageBackground`
   height: 220px;
-  opacity: 0.75;
+  justify-content: flex-end;
   border-radius: ${({ theme }) => theme.borderRadius.small};
+  overflow: hidden;
 `
 
-const IsLiked = styled.TouchableOpacity<{ isLiked: boolean }>`
+const IsLiked = styled.TouchableOpacity`
   position: absolute;
   right: 9px;
   top: 9px;
-  width: 35px;
-  height: 35px;
-  border-radius: 50px;
-  background: ${({ isLiked }) =>
-    isLiked ? 'rgba(2, 124, 173, 0.8)' : 'rgba(255, 255, 255, 0.8)'};
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.8);
   justify-content: center;
   align-items: center;
 `
 
-const HeartWrapper = styled.View``
+const BottomContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin: 13px 16px;
+`
 
 const RatingContainer = styled.View`
-  position: absolute;
-  left: 16px;
-  bottom: 12px;
   flex-direction: row;
+  align-items: center;
 `
 
 const RatingText = styled(Paragraph)``
 
-const ReviewsNumber = styled(Details)`
+const StarsWrapper = styled.View`
+  margin: 0 5px;
+`
+
+const ReviewsNumber = styled(Details)``
+
+const DeliveryContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+`
+
+const TimeText = styled(Details)`
   margin-left: 5px;
 `
 
-const StarsWrapper = styled.View`
-  width: 55px;
-  margin: 2px 0 0 5px;
-`
-
-const DeliveryTime = styled.View`
-  position: absolute;
-  right: 16px;
-  bottom: 13px;
-  flex-direction: row;
-`
-
-const TimeText = styled(Details)``
-
-const TimeIconWrapper = styled.View`
-  width: 14px;
-  margin-right: 5px;
-`
-
-const CardTitle = styled(Heading1)`
-  margin: 20px 0 0 3px;
+const CardTitle = styled(Heading1).attrs({
+  numberOfLines: 1,
+})`
+  margin-top: 18px;
   text-transform: uppercase;
 `
 
-const CuisineCategories = styled(BaseText)`
-  margin: 7px 0 0 3px;
+const CuisineCategoriesContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 7px;
+`
+
+const CuisineCategory = styled(Description)`
+  margin: 2px 0;
+`
+
+const CuisineCategoryDivider = styled.View`
+  width: 3px;
+  height: 3px;
+  margin: 0 9px;
+  border-radius: 1.5px;
+  background-color: ${({ theme }) => theme.colors.gray};
 `

@@ -14,7 +14,7 @@ const WEIGHT_NAME_TO_VALUE: Record<FontWeight, string> = {
   bold: '700',
 }
 
-export const BaseText = styled.Text<BaseTextProps>`
+const BaseText = styled.Text<BaseTextProps>`
   font-family: ${({ theme, weight, family }) =>
     family
       ? theme.secondaryFonts[family][weight || 'regular']

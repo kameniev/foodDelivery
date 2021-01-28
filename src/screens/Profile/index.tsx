@@ -30,7 +30,7 @@ const ProfileRouter = () => {
         component={ProfileScreen}
       />
       <Stack.Screen
-        options={{ title: 'Профиль' }}
+        options={{ title: 'Личные данные' }}
         name="SettingProfile"
         component={UserScreen}
       />
