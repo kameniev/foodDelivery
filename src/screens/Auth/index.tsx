@@ -1,15 +1,19 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import TextInput from 'uikit/TextInput'
 import Button from 'uikit/Button'
 import { Heading1 } from 'uikit/Typography'
 
 const Auth = () => {
+  const insets = useSafeAreaInsets()
   return (
-    <Wrapper>
-      <KeyboardAwareScrollView>
-        <Logo color="blue">ЛОГО</Logo>
+    <Container style={{ paddingBottom: insets.bottom }}>
+      <KeyboardAwareScrollView contentContainerStyle={{ flex: 1 }}>
+        <LogoContainer>
+          <Logo color="blue">ЛОГО</Logo>
+        </LogoContainer>
         <InputsContainer>
           <FirstInputWrapper>
             <TextInput
@@ -30,22 +34,21 @@ const Auth = () => {
           <Button title={'Отправить'} onPress={() => console.log('Success!')} />
         </ButtonContainer>
       </KeyboardAwareScrollView>
-    </Wrapper>
+    </Container>
   )
 }
 
 export default Auth
 
-const Wrapper = styled.View``
-
-const Logo = styled(Heading1)`
-  margin-top: 32%;
-  text-align: center;
+const Container = styled.SafeAreaView`
+  flex: 1;
 `
 
+const Logo = styled(Heading1)``
+
 const InputsContainer = styled.View`
-  margin-top: 91px;
-  margin-left: 15px;
+  flex: 1;
+  padding: 0 15px 0 15px;
 `
 
 const SecondInputWrapper = styled.View`
@@ -54,10 +57,15 @@ const SecondInputWrapper = styled.View`
 `
 
 const FirstInputWrapper = styled.View`
-  width: 95%;
+  width: 100%;
 `
 
 const ButtonContainer = styled.View`
-  margin: 60% auto 0;
-  width: 90%;
+  margin: 30px 15px;
+`
+
+const LogoContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `

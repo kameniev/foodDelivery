@@ -24,10 +24,12 @@ const ProfileAddressesScreen = () => {
         </AddressCardWrapper>
       </AddressCardsContainer>
       <AddAddressWrapper>
-        <Button
-          title={'Добавить адрес'}
-          onPress={() => navigation.navigate('AddAddress')}
-        />
+        <ButtonWrapper>
+          <Button
+            title={'Добавить адрес'}
+            onPress={() => navigation.navigate('AddAddress')}
+          />
+        </ButtonWrapper>
       </AddAddressWrapper>
     </Container>
   )
@@ -45,6 +47,7 @@ const AddressCardsContainer = styled.ScrollView`
 
 const AddAddressWrapper = styled.View`
   justify-content: center;
+  align-items: center;
   flex: 0.2;
   background: ${({ theme }) => theme.colors.white};
 `
@@ -52,5 +55,9 @@ const AddAddressWrapper = styled.View`
 const AddressCardWrapper = styled.View`
   margin-top: 20px;
   align-self: center;
+  width: 90%;
+`
+
+const ButtonWrapper = styled.View`
   width: 90%;
 `

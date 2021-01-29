@@ -62,7 +62,7 @@ const Avatar = styled.Image`
   margin: 20px auto 0;
   width: 104px;
   height: 104px;
-  border-radius: 50px;
+  border-radius: 52px;
 `
 
 const TextInputContainer = styled.View`

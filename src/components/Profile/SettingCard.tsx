@@ -40,7 +40,9 @@ const IconWrapper = styled.View`
   margin-left: 25px;
 `
 
-const CardText = styled(Heading2)`
+const CardText = styled(Heading2).attrs({
+  numberOfLines: 1,
+})`
   margin-left: 22px;
   width: 75%;
 `

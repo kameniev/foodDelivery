@@ -21,6 +21,7 @@ const ButtonContainer = styled.TouchableOpacity`
   height: 45px;
   border-radius: ${({ theme }) => theme.borderRadius.large};
   background-color: ${({ theme }) => theme.colors.blue};
+  justify-content: center;
 `
 
 const ButtonText = styled(Heading2)`

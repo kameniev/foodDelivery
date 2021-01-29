@@ -27,13 +27,12 @@ export default ImagesCarousel
 const CarouselContainer = styled.View``
 
 const CarouselImage = styled.Image`
-  width: 345px; // ?
   height: 260px;
+  width: 100%;
   border-radius: ${({ theme }) => theme.borderRadius.small};
 `
 
 const Wrapper = styled.View`
-  margin: 20px auto 0; // ? auto
-  width: 345px; // ? без ширины
+  width: 100%;
   height: 260px;
 `
