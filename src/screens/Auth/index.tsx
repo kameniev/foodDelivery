@@ -7,9 +7,9 @@ import Button from 'uikit/Button'
 import { Heading1 } from 'uikit/Typography'
 
 const Auth = () => {
-  const insets = useSafeAreaInsets()
+  const { bottom: bottomInset } = useSafeAreaInsets()
   return (
-    <Container style={{ paddingBottom: insets.bottom }}>
+    <Container {...bottomInset}>
       <KeyboardAwareScrollView contentContainerStyle={{ flex: 1 }}>
         <LogoContainer>
           <Logo color="blue">ЛОГО</Logo>
@@ -40,7 +40,7 @@ const Auth = () => {
 
 export default Auth
 
-const Container = styled.SafeAreaView`
+const Container = styled.SafeAreaView.attrs({ bottomInset: 20 })`
   flex: 1;
 `
 
@@ -48,7 +48,7 @@ const Logo = styled(Heading1)``
 
 const InputsContainer = styled.View`
   flex: 1;
-  padding: 0 15px 0 15px;
+  padding: 0 15px;
 `
 
 const SecondInputWrapper = styled.View`

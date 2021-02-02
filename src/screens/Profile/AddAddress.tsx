@@ -71,7 +71,7 @@ const Container = styled.SafeAreaView`
 `
 
 const ContentContainer = styled.ScrollView`
-  flex: 0.9;
+  flex: 1;
 `
 
 const AddressContainer = styled.View`
@@ -101,7 +101,6 @@ const ButtonContainer = styled.View`
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.white};
-  flex: 0.1;
 `
 
 const ButtonWrapper = styled.View`

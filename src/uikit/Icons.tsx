@@ -23,6 +23,7 @@ import SettingProfile from 'assets/icons/SettingCards/setting_profile.svg'
 import SettingSettings from 'assets/icons/SettingCards/setting_settings.svg'
 import Pointer from 'assets/icons/SettingCards/pointer.svg'
 import List from 'assets/icons/SettingCards/list.svg'
+import Fullscreen from 'assets/icons/fullscreen.svg'
 
 export {
   // Navigation
@@ -51,4 +52,5 @@ export {
   SettingSettings,
   Pointer,
   List,
+  Fullscreen,
 }

@@ -2,6 +2,7 @@ export const borderRadius = {
   large: '25px',
   small: '20px',
   little: '10px',
+  mini: '8px',
 }
 
 export const shadow = {

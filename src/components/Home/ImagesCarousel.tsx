@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import Carousel from 'react-native-snap-carousel'
-import carouselData from 'data/carouselData'
+import carouselData from 'mocks/carouselData'
 
 const ImagesCarousel = () => {
   const renderItem = ({ item }) => (
@@ -33,6 +33,5 @@ const CarouselImage = styled.Image`
 `
 
 const Wrapper = styled.View`
-  width: 100%;
   height: 260px;
 `

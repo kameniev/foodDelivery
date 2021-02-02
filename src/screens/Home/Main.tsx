@@ -3,6 +3,8 @@ import styled from 'styled-components/native'
 import PlaceCard from 'components/Home/PlaceCard'
 import ImagesCarousel from 'components/Home/ImagesCarousel'
 import CardImage1 from 'assets/images/card_image1.jpg'
+import DishCard from 'components/Dish/DishCard'
+import DishImage from 'assets/images/dish_Image.jpg'
 
 const HomeMainScreen = () => {
   return (
